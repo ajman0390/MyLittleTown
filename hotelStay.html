@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Added CSS file-->
+    <link rel="stylesheet" href="css/mainStyles.css">
+    <link rel="stylesheet" href="css/imgBorder.css">
+
+    <!-- Google fonts stylesheet THIS FAILS THE VALIDATOR as Google fonts inputs a pipe for multiple fonts -->
+    <link href="https://fonts.googleapis.com/css?family=PT+Serif|Playfair+Display&display=swap" rel="stylesheet">
+
+    <!-- <link rel="icon" href="img/fatcat-icon.png" /> -->
+    <title>FatCat Ice Cream Hut</title>
+</head>
+
+<body>
+
+    <!-- Start of Nav -->
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark navd">
+            <a class="navbar-brand" href="index.html">Home</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsDefault"
+              aria-controls="navbarsDefault" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+        
+            <div class="collapse navbar-collapse" id="navbarsDefault">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="hotelStay.html">Hotel</a>
+                </li>
+        
+                <li class="nav-item">
+                  <a class="nav-link" href="carRental.html">Car Rental</a>
+                </li>
+        
+                <li class="nav-item">
+                  <a class="nav-link" href="activities.html">Activities</a>
+                </li>
+        
+              </ul>
+            </div>
+            <!-- End of Nav -->
+          </nav>
+
+    <header>
+
+            <div class="container">
+                    <div class="py-3"><br /></div>
+                    <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark jumboT">
+                      <div class="text-center">
+                        <h1 class="display-4 font-italic">Out Little Town</h1>
+                        <p class="lead my-3 pTop">Multiple words here</p>
+                      </div>
+                    </div>
+                  </div>
+
+    </header>
+
+    <main class="container d-flex justify-content-center">
+
+        <section class="container offset-md-2">
+
+            <!-- Start of Form -->
+            <form class="form-horizontal well" id="ice-cream" method="GET" action="#">
+
+                <!-- Message at top of Form -->
+                <h3>Hotel Stay</h3>
+                <hr />
+
+                <!-- Car Type Dropdown -->
+                <div class="form-group row">
+                    <div class="input-group">
+                        <label class="col-sm-2 col-form-label" for="inputRoomSelect">Room Type</label>
+                        <div class="col-md-6">
+                            <select class="custom-select" id="inputRoomSelect"
+                                aria-label="Room select with button addon">
+                                <option value="1" selected>Queen - Sleeps 5</option>
+                                <option value="2">King - Sleeps 2</option>
+                                <option value="3">King Suite - Sleeps 4</option>
+                                <option value="4">2-Bedroom Suite - Sleeps 6</option>
+                            </select>
+                            <small id="roomHelp" class="form-text text-muted">Rooms have limited capacity of guests per night.</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pickup Date Input -->
+                <div class="form-group row">
+                    <label for="checkInDateInput" class="col-sm-2 col-form-label">Check-In Date: </label>
+                    <div class="col-md-6">
+                        <input type="date" class="form-control" placeholder="Check-In  Date" tabindex="1"
+                            id="checkInDateInput" name="checkInDateInput" />
+                    </div>
+
+                    <div class="col-md-4">
+                        <p id="bottomP"></p>
+                    </div>
+
+                </div>
+
+                <!-- Num of Days Input -->
+                <div class="form-group row">
+                    <label for="numNightsInput" class="col-sm-2 col-form-label">Number of Nights: </label>
+                    <div id="scoop-amount-group" class="col-md-6">
+                        <input type="number" class="form-control" placeholder="Number of Nights" tabindex="1"
+                            id="numDaysInput" name="numNightsInput" min="1" max="28" autofocus />
+
+                        <small id="nightsHelp" class="form-text text-muted">Checkout by 11:00 AM.</small>
+                    </div>
+
+                    <div class="col-md-4">
+                        <p id="bottomP"></p>
+                    </div>
+
+                </div>
+
+                <!-- Num of Guests Input -->
+                <div class="form-group row">
+                        <label for="numGuestsInput" class="col-sm-2 col-form-label">Number of Guests: </label>
+                        <div class="form-group col-md-3">
+                                <label for="inputEmail4">Adults</label>
+                                <input type="number" class="form-control" id="numAdultsInput" placeholder="Number of Adults">
+                              </div>
+                              <div class="form-group col-md-3">
+                                <label for="numChildrenInput">Children</label>
+                                <input type="number" class="form-control" id="numChildrenInput" placeholder="Number of Children">
+                              </div>
+
+                        <!-- <div id="scoop-amount-group" class="col-md-6">
+                            <input type="number" class="form-control" placeholder="Number of Guests" tabindex="1"
+                                id="numGuestsInput" name="numGuestsInput" min="1" max="28" autofocus />
+    
+                            <small id="nightsHelp" class="form-text text-muted">Checkout by 11:00 AM.</small>
+                        </div> -->
+    
+                        <div class="col-md-4">
+                            <p id="bottomP"></p>
+                        </div>
+    
+                    </div>
+
+                <div class="container">
+                    <fieldset>
+                        <legend>Options: </legend>
+
+                        <!-- Toll Tag checkbox Input -->
+                        <div class="form-group row">
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="tollTagCheck"
+                                    name="tollTagCheck" value="tollTagCheck">
+                                <label class="custom-control-label" for="tollTagCheck">Electronic Toll Tag
+                                    ($3.95/day)</label>
+                            </div>
+                        </div>
+
+                        <!-- GPS checkbox Input -->
+                        <div class="form-group row">
+                            <div class="custom-control custom-checkbox col">
+                                <input type="checkbox" class="custom-control-input" id="gpsCheck" name="gpsCheck"
+                                    value="gpsCheck">
+                                <label class="custom-control-label" for="gpsCheck">GPS ($2.95/day)</label>
+                            </div>
+                        </div>
+
+                        <!-- Roadside checkbox Input -->
+                        <div class="form-group row">
+                            <div class="custom-control custom-checkbox col">
+                                <input type="checkbox" class="custom-control-input" id="roadSideCheck"
+                                    name="roadSideCheck" value="roadSideCheck">
+                                <label class="custom-control-label" for="roadSideCheck">Roadside Assistance
+                                    ($2.95/day)</label>
+                            </div>
+                        </div>
+                    </fieldset>
+
+
+                    <fieldset>
+                        <legend>Under 25 </legend>
+                        <!-- Discount Raidos -->
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="noDiscountRadio" id="noDiscountRadio"
+                                value="option1" checked>
+                            <label class="form-check-label" for="noDiscountRadio">No Discount</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="aaaRadio" id="aaaRadio"
+                                value="option2">
+                            <label class="form-check-label" for="aaaRadio">AAA</label>
+                        </div>
+                        <!-- <small id="aaaHelp" class="form-text text-muted">10% Discount.</small> -->
+
+                        <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="seniorRadio" id="seniorRadio"
+                                    value="option2">
+                                <label class="form-check-label" for="seniorRadio">Senior</label>
+                        </div>
+
+                        <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="militaryRadio" id="militaryRadio"
+                                        value="option2">
+                                    <label class="form-check-label" for="militaryRadio">Military</label>
+                            </div>
+                    </fieldset>
+
+                </div>
+
+                <!-- Form Calculate and Reset Btns -->
+                <div class="text-center">
+                    <br/>
+                    <button type="button" class="btn btn-outline-primary btn-lg" name="calculate"
+                        id="calcBtn">Calculate</button>
+                    <button type="reset" class="btn btn-outline-danger btn-lg" id="resetBtn">Reset</button>
+                </div>
+                <br />
+
+                <!-- Total Car Rental Costs output -->
+                <div class="form-group row hideDis" id="showRental">
+                    <label for="carRentalPmtTotal" class="control-label col-sm-2 col-form-label">Car Rental:</label>
+                    <div id="loan-life-group" class="col-md-6">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">$</div>
+                            <input type="number" class="form-control" placeholder="Car Rental Costs" tabindex="1"
+                                id="carRentalPmtTotal" min="0" name="iceCreamPmtTotal" readonly />
+                        </div>
+                    </div>
+
+                    <!-- <div class="row">
+                        
+                    </div> -->
+                </div>
+
+                <!-- Total Options Costs output -->
+                <div class="form-group row hideDis" id="showOptions">
+                    <label for="carOptionPmtTotal" class="control-label col-sm-2 col-form-label">Options:</label>
+                    <div id="loan-life-group" class="col-md-6">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">$</div>
+                            <input type="number" class="form-control" placeholder="Options Costs" tabindex="1"
+                                id="carOptionPmtTotal" min="0" name="iceCreamPmtTotal" readonly />
+                        </div>
+                    </div>
+
+                    <!-- <div class="row">
+                        
+                    </div> -->
+                </div>
+
+                <!-- Total Under 25 Costs output -->
+                <div class="form-group row hideDis" id="showAge">
+                    <label for="underOutput" class="control-label col-sm-2 col-form-label">Under 25 surcharge:</label>
+                    <div id="loan-life-group" class="col-md-6">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">$</div>
+                            <input type="number" class="form-control" placeholder="Age Surcharge" tabindex="1"
+                                id="underOutput" min="0" name="iceCreamPmtTotal" readonly />
+                        </div>
+                    </div>
+
+                    <!-- <div class="row">
+                            
+                        </div> -->
+                </div>
+
+                <!-- Total Due Output -->
+                <div class="form-group row hideDis" id="showTotal">
+                    <label for="pmtTotalDue" class="control-label col-sm-2 col-form-label">Total Due:</label>
+                    <div id="loan-life-group" class="col-md-6">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">$</div>
+                            <input type="number" class="form-control" placeholder="Total Car Rental Costs" tabindex="1"
+                                id="pmtTotalDue" min="0" name="pmtTotalDue" readonly />
+                        </div>
+                    </div>
+
+                    <!-- <div class="row">
+                            
+                        </div> -->
+                </div>
+
+                <!-- Return Date output -->
+                <div class="form-group row hideDis" id="showRtrnDate">
+                    <label for="returnDateOutput" class="control-label col-sm-2 col-form-label">Return Date:</label>
+                    <div id="loan-life-group" class="col-md-6">
+                        <input type="text" class="form-control" placeholder="Return Date" tabindex="1"
+                            id="returnDateOutput" name="returnDateOutput" readonly />
+                    </div>
+                </div>
+
+            </form> <!-- End of Form -->
+        </section> <!-- /section -->
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="js/carRental.js"></script>
+</body>
+
+</html>

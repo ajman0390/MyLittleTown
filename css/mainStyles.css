@@ -1,0 +1,31 @@
+#topC, .jumboT {
+    padding-top: .75em;
+    margin-top: .75em;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+}
+
+.pTop {
+    font-family: 'PT Serif', serif;
+    white-space: nowrap;
+}
+
+#bottomP {
+    font-style: italic;
+    color: red;
+    background-color: wheat;
+    padding-top: .4em;
+    margin-top: .8em;
+    display: none;
+
+}
+
+footer p {
+    float: right;
+}
+
+/* .hideDis {
+    display: none;
+}  */
