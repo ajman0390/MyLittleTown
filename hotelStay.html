@@ -18,49 +18,49 @@
     <link href="https://fonts.googleapis.com/css?family=PT+Serif|Playfair+Display&display=swap" rel="stylesheet">
 
     <!-- <link rel="icon" href="img/fatcat-icon.png" /> -->
-    <title>FatCat Ice Cream Hut</title>
+    <title>Our Little Town</title>
 </head>
 
 <body>
 
     <!-- Start of Nav -->
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark navd">
-            <a class="navbar-brand" href="index.html">Home</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsDefault"
-              aria-controls="navbarsDefault" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-        
-            <div class="collapse navbar-collapse" id="navbarsDefault">
-              <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                  <a class="nav-link" href="hotelStay.html">Hotel</a>
+        <a class="navbar-brand" href="index.html">Home</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsDefault"
+            aria-controls="navbarsDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsDefault">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="hotelStay.html">Hotel</a>
                 </li>
-        
+
                 <li class="nav-item">
-                  <a class="nav-link" href="carRental.html">Car Rental</a>
+                    <a class="nav-link" href="carRental.html">Car Rental</a>
                 </li>
-        
+
                 <li class="nav-item">
-                  <a class="nav-link" href="activities.html">Activities</a>
+                    <a class="nav-link" href="activities.html">Activities</a>
                 </li>
-        
-              </ul>
-            </div>
-            <!-- End of Nav -->
-          </nav>
+
+            </ul>
+        </div>
+        <!-- End of Nav -->
+    </nav>
 
     <header>
 
-            <div class="container">
-                    <div class="py-3"><br /></div>
-                    <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark jumboT">
-                      <div class="text-center">
-                        <h1 class="display-4 font-italic">Out Little Town</h1>
-                        <p class="lead my-3 pTop">Multiple words here</p>
-                      </div>
-                    </div>
-                  </div>
+        <div class="container">
+            <div class="py-3"><br /></div>
+            <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark jumboT">
+                <div class="text-center">
+                    <h1 class="display-4 font-italic">Out Little Town</h1>
+                    <p class="lead my-3 pTop">Multiple words here about out Town</p>
+                </div>
+            </div>
+        </div>
 
     </header>
 
@@ -69,41 +69,37 @@
         <section class="container offset-md-2">
 
             <!-- Start of Form -->
-            <form class="form-horizontal well" id="ice-cream" method="GET" action="#">
+            <form class="form-horizontal well" id="hotel-Stay" method="GET" action="#">
 
                 <!-- Message at top of Form -->
                 <h3>Hotel Stay</h3>
                 <hr />
 
-                <!-- Car Type Dropdown -->
+                <!-- Room Type Dropdown -->
                 <div class="form-group row">
                     <div class="input-group">
                         <label class="col-sm-2 col-form-label" for="inputRoomSelect">Room Type</label>
                         <div class="col-md-6">
                             <select class="custom-select" id="inputRoomSelect"
                                 aria-label="Room select with button addon">
-                                <option value="1" selected>Queen - Sleeps 5</option>
-                                <option value="2">King - Sleeps 2</option>
-                                <option value="3">King Suite - Sleeps 4</option>
-                                <option value="4">2-Bedroom Suite - Sleeps 6</option>
+                                <option value="Queen" selected>Queen - Sleeps 5</option>
+                                <option value="King">King - Sleeps 2</option>
+                                <option value="King Suite">King Suite - Sleeps 4</option>
+                                <option value="2-Bedroom Suite">2-Bedroom Suite - Sleeps 6</option>
                             </select>
-                            <small id="roomHelp" class="form-text text-muted">Rooms have limited capacity of guests per night.</small>
+                            <small id="roomHelp" class="form-text text-muted">Rooms have limited capacity of guests per
+                                night.</small>
                         </div>
                     </div>
                 </div>
 
-                <!-- Pickup Date Input -->
+                <!-- CheckIn Date Input -->
                 <div class="form-group row">
                     <label for="checkInDateInput" class="col-sm-2 col-form-label">Check-In Date: </label>
                     <div class="col-md-6">
-                        <input type="date" class="form-control" placeholder="Check-In  Date" tabindex="1"
-                            id="checkInDateInput" name="checkInDateInput" />
+                        <input type="date" class="form-control" tabindex="1" id="checkInDateInput"
+                            name="checkInDateInput" />
                     </div>
-
-                    <div class="col-md-4">
-                        <p id="bottomP"></p>
-                    </div>
-
                 </div>
 
                 <!-- Num of Days Input -->
@@ -111,9 +107,26 @@
                     <label for="numNightsInput" class="col-sm-2 col-form-label">Number of Nights: </label>
                     <div id="scoop-amount-group" class="col-md-6">
                         <input type="number" class="form-control" placeholder="Number of Nights" tabindex="1"
-                            id="numDaysInput" name="numNightsInput" min="1" max="28" autofocus />
+                            id="numNightsInput" name="numNightsInput" min="1" max="28" autofocus />
 
                         <small id="nightsHelp" class="form-text text-muted">Checkout by 11:00 AM.</small>
+                    </div>
+                </div>
+
+                <!-- Num of Guests Input -->
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Number of Guests: </label>
+                    <div class="form-group col-md-3">
+                        <label for="numAdultsInput">Adults</label>
+                        <input type="number" class="form-control" id="numAdultsInput" placeholder="Number of Adults"
+                            min="0" max="28">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label for="numChildrenInput">Children</label>
+                        <input type="number" class="form-control" id="numChildrenInput" placeholder="Number of Children"
+                            min="0" max="28">
+                        <small class="form-text text-muted">Children's room must have at least one
+                            adult.</small>
                     </div>
 
                     <div class="col-md-4">
@@ -122,174 +135,126 @@
 
                 </div>
 
-                <!-- Num of Guests Input -->
-                <div class="form-group row">
-                        <label for="numGuestsInput" class="col-sm-2 col-form-label">Number of Guests: </label>
-                        <div class="form-group col-md-3">
-                                <label for="inputEmail4">Adults</label>
-                                <input type="number" class="form-control" id="numAdultsInput" placeholder="Number of Adults">
-                              </div>
-                              <div class="form-group col-md-3">
-                                <label for="numChildrenInput">Children</label>
-                                <input type="number" class="form-control" id="numChildrenInput" placeholder="Number of Children">
-                              </div>
-
-                        <!-- <div id="scoop-amount-group" class="col-md-6">
-                            <input type="number" class="form-control" placeholder="Number of Guests" tabindex="1"
-                                id="numGuestsInput" name="numGuestsInput" min="1" max="28" autofocus />
-    
-                            <small id="nightsHelp" class="form-text text-muted">Checkout by 11:00 AM.</small>
-                        </div> -->
-    
-                        <div class="col-md-4">
-                            <p id="bottomP"></p>
-                        </div>
-    
-                    </div>
-
+                <!-- Breakfast and Discount Radio Inputs -->
                 <div class="container">
-                    <fieldset>
-                        <legend>Options: </legend>
 
-                        <!-- Toll Tag checkbox Input -->
+                    <!-- Breakfast checkbox Input -->
+                    <fieldset class="form-group">
+                        <legend>Options: </legend>
                         <div class="form-group row">
                             <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="tollTagCheck"
-                                    name="tollTagCheck" value="tollTagCheck">
-                                <label class="custom-control-label" for="tollTagCheck">Electronic Toll Tag
-                                    ($3.95/day)</label>
+                                <input type="checkbox" class="custom-control-input" id="breakfastCheck"
+                                    name="breakfastCheck" value="breakfastCheck">
+                                <label class="custom-control-label" for="breakfastCheck">Breakfast
+                                    ($6.96/adult - $3.95/child: Per Night)</label>
                             </div>
                         </div>
 
-                        <!-- GPS checkbox Input -->
-                        <div class="form-group row">
-                            <div class="custom-control custom-checkbox col">
-                                <input type="checkbox" class="custom-control-input" id="gpsCheck" name="gpsCheck"
-                                    value="gpsCheck">
-                                <label class="custom-control-label" for="gpsCheck">GPS ($2.95/day)</label>
-                            </div>
-                        </div>
-
-                        <!-- Roadside checkbox Input -->
-                        <div class="form-group row">
-                            <div class="custom-control custom-checkbox col">
-                                <input type="checkbox" class="custom-control-input" id="roadSideCheck"
-                                    name="roadSideCheck" value="roadSideCheck">
-                                <label class="custom-control-label" for="roadSideCheck">Roadside Assistance
-                                    ($2.95/day)</label>
-                            </div>
-                        </div>
                     </fieldset>
 
 
-                    <fieldset>
-                        <legend>Under 25 </legend>
-                        <!-- Discount Raidos -->
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="noDiscountRadio" id="noDiscountRadio"
-                                value="option1" checked>
-                            <label class="form-check-label" for="noDiscountRadio">No Discount</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="aaaRadio" id="aaaRadio"
-                                value="option2">
-                            <label class="form-check-label" for="aaaRadio">AAA</label>
-                        </div>
-                        <!-- <small id="aaaHelp" class="form-text text-muted">10% Discount.</small> -->
+                    <!-- Discount Raidos -->
+                    <fieldset class="form-group">
+                        <legend class="col-form-label col-sm-2 pt-0">Discount</legend>
+                        <div class="row">
 
-                        <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="seniorRadio" id="seniorRadio"
-                                    value="option2">
-                                <label class="form-check-label" for="seniorRadio">Senior</label>
-                        </div>
-
-                        <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="militaryRadio" id="militaryRadio"
+                            <div class="col-sm-10">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="gridRadios" id="noDiscountRadio"
+                                        value="option1" checked>
+                                    <label class="form-check-label" for="noDiscountRadio">
+                                        No Discount
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="gridRadios" id="aaaRadio"
                                         value="option2">
-                                    <label class="form-check-label" for="militaryRadio">Military</label>
-                            </div>
-                    </fieldset>
+                                    <label class="form-check-label" for="aaaRadio">
+                                        AAA (10% OFF Room Only)
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="gridRadios" id="seniorRadio"
+                                        value="option3">
+                                    <label class="form-check-label" for="seniorRadio">
+                                        Senior (10% OFF Room, FREE Breakfast)
+                                    </label>
+                                </div>
 
-                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="gridRadios" id="militaryRadio"
+                                        value="option4">
+                                    <label class="form-check-label" for="militaryRadio">
+                                        Military (20% OFF Room Only)
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div> <!-- /container for Breakfast and Discount Radio Inputs -->
 
                 <!-- Form Calculate and Reset Btns -->
                 <div class="text-center">
-                    <br/>
+                    <br />
                     <button type="button" class="btn btn-outline-primary btn-lg" name="calculate"
                         id="calcBtn">Calculate</button>
                     <button type="reset" class="btn btn-outline-danger btn-lg" id="resetBtn">Reset</button>
                 </div>
                 <br />
 
-                <!-- Total Car Rental Costs output -->
-                <div class="form-group row hideDis" id="showRental">
-                    <label for="carRentalPmtTotal" class="control-label col-sm-2 col-form-label">Car Rental:</label>
-                    <div id="loan-life-group" class="col-md-6">
+                <!-- Total Room Costs with Breakfast output -->
+                <div class="form-group row hideDis" id="showRoomTotal">
+                    <label for="roomPmtTotal" class="control-label col-sm-2 col-form-label">Room Costs:</label>
+                    <div class="col-md-6">
                         <div class="input-group-prepend">
                             <div class="input-group-text">$</div>
-                            <input type="number" class="form-control" placeholder="Car Rental Costs" tabindex="1"
-                                id="carRentalPmtTotal" min="0" name="iceCreamPmtTotal" readonly />
+                            <input type="number" class="form-control" placeholder="Room Costs" tabindex="1"
+                                id="roomPmtTotal" min="0" name="roomPmtTotal" readonly />
                         </div>
                     </div>
-
-                    <!-- <div class="row">
-                        
-                    </div> -->
                 </div>
 
-                <!-- Total Options Costs output -->
+                <!-- Discount Costs output -->
+                <div class="form-group row hideDis" id="showDiscount">
+                    <label for="discountOutput" class="control-label col-sm-2 col-form-label">Discount:</label>
+                    <div class="col-md-6">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">$</div>
+                            <input type="number" class="form-control" placeholder="Discount Amount" tabindex="1"
+                                id="discountOutput" min="0" name="discountOutput" readonly />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Taxes Costs output -->
                 <div class="form-group row hideDis" id="showOptions">
-                    <label for="carOptionPmtTotal" class="control-label col-sm-2 col-form-label">Options:</label>
-                    <div id="loan-life-group" class="col-md-6">
+                    <label for="taxPmtTotal" class="control-label col-sm-2 col-form-label">Taxes:</label>
+                    <div class="col-md-6">
                         <div class="input-group-prepend">
                             <div class="input-group-text">$</div>
-                            <input type="number" class="form-control" placeholder="Options Costs" tabindex="1"
-                                id="carOptionPmtTotal" min="0" name="iceCreamPmtTotal" readonly />
+                            <input type="number" class="form-control" placeholder="Tax Costs" tabindex="1"
+                                id="taxPmtTotal" min="0" name="taxPmtTotal" readonly />
                         </div>
                     </div>
-
-                    <!-- <div class="row">
-                        
-                    </div> -->
-                </div>
-
-                <!-- Total Under 25 Costs output -->
-                <div class="form-group row hideDis" id="showAge">
-                    <label for="underOutput" class="control-label col-sm-2 col-form-label">Under 25 surcharge:</label>
-                    <div id="loan-life-group" class="col-md-6">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text">$</div>
-                            <input type="number" class="form-control" placeholder="Age Surcharge" tabindex="1"
-                                id="underOutput" min="0" name="iceCreamPmtTotal" readonly />
-                        </div>
-                    </div>
-
-                    <!-- <div class="row">
-                            
-                        </div> -->
                 </div>
 
                 <!-- Total Due Output -->
                 <div class="form-group row hideDis" id="showTotal">
                     <label for="pmtTotalDue" class="control-label col-sm-2 col-form-label">Total Due:</label>
-                    <div id="loan-life-group" class="col-md-6">
+                    <div class="col-md-6">
                         <div class="input-group-prepend">
                             <div class="input-group-text">$</div>
-                            <input type="number" class="form-control" placeholder="Total Car Rental Costs" tabindex="1"
+                            <input type="number" class="form-control" placeholder="Total Stay Costs" tabindex="1"
                                 id="pmtTotalDue" min="0" name="pmtTotalDue" readonly />
                         </div>
                     </div>
-
-                    <!-- <div class="row">
-                            
-                        </div> -->
                 </div>
 
-                <!-- Return Date output -->
+                <!-- CheckOut Date output -->
                 <div class="form-group row hideDis" id="showRtrnDate">
-                    <label for="returnDateOutput" class="control-label col-sm-2 col-form-label">Return Date:</label>
-                    <div id="loan-life-group" class="col-md-6">
-                        <input type="text" class="form-control" placeholder="Return Date" tabindex="1"
+                    <label for="returnDateOutput" class="control-label col-sm-2 col-form-label">Checkout Date:</label>
+                    <div class="col-md-6">
+                        <input type="text" class="form-control" placeholder="Checkout Date" tabindex="1"
                             id="returnDateOutput" name="returnDateOutput" readonly />
                     </div>
                 </div>
@@ -298,6 +263,10 @@
         </section> <!-- /section -->
     </main>
 
+    <footer class="container">
+        <hr />
+        <p>&copy; FatCatBank 2019</p>
+    </footer>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
@@ -305,7 +274,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-    <script src="js/carRental.js"></script>
+    <script src="scripts/hotelStay.js"></script>
 </body>
 
 </html>
