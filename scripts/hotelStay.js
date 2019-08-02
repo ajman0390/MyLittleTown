@@ -18,10 +18,9 @@ function calculatePrice() {
     const roomType = rooms.options[rooms.selectedIndex].value;
     const roomFinal = getRoomInfo(roomType);
 
-    // console.log(roomType);
-
     // Num of Guests, check if can stay in selected room 
     const numAdults = document.getElementById("numAdultsInput").value;
+    validateForm(document.getElementById("numAdultsInput")); // calls validateForm to check for positive values
     const numKids = document.getElementById("numChildrenInput").value;
     canRoomHoldCustomer(roomFinal, numAdults, numKids);
 
@@ -30,19 +29,13 @@ function calculatePrice() {
     const checkinDayField = document.getElementById("checkInDateInput");
     let roomCostBeforeDiscouting = getRoomCost(roomFinal, checkinDayField.value, numNightsInputField.value);
 
-    // console.log(roomCostBeforeDiscouting);
-
     // call getBreakfastCost to calc bfast costs
     let bfastCost = getBreakfastCost(numAdults, numKids, numNightsInputField.value);
-
-    // console.log(bfastCost);
 
     // Obtain discount amt
     let discountCost = getDiscount(roomCostBeforeDiscouting);
     let discountAmt = discountCost * roomCostBeforeDiscouting;
     document.getElementById("discountOutput").value = discountAmt.toFixed(2);
-
-    // console.log(discountCost);
 
     // if senior raido checked, no bfast costs
     if (document.getElementById("seniorRadio").checked) {
@@ -67,9 +60,6 @@ function calculatePrice() {
     // Call calculateReturnDate to calc return date, display return date
     let returnDate = calculateReturnDate();
     document.getElementById("returnDateOutput").value = returnDate.toDateString();
-
-    // console.log(returnDate.toDateString());
-
 }
 
 /*
@@ -105,10 +95,6 @@ function getRoomInfo(roomType) {
 */
 function canRoomHoldCustomer(roomType, numAdults, numKids) {
     let numGuests = Number(numAdults) + Number(numKids);
-    console.log(numAdults);
-    console.log(numKids);
-    console.log(numGuests);
-    console.log(roomType.maxOccupancy);
 
     if (numGuests > roomType.maxOccupancy) {
         document.getElementById("bottomP").innerHTML = "The number of Guests exceeds the occupancy of the Room(s)";
@@ -203,7 +189,7 @@ function calculateReturnDate() {
 *
 */
 function validateForm(inputCheck) {
-    if ( (isNaN(inputCheck.value)) || (inputCheck.value < 0) ) {
+    if ( (isNaN(inputCheck.value)) || (inputCheck.value <= 0) ) {
         document.getElementById("bottomP").innerHTML = "The input was not correct. Please input valid positive numbers";
         document.getElementById("bottomP").style.display = "block";
     }

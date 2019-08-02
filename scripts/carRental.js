@@ -33,7 +33,11 @@ function calculatePrice() {
     returnDateField.value = returnDate.toDateString();
 }
 
-
+/*
+* This funciton calculates the Return Date
+*
+* @return returnDate (Date) - The return date
+*/
 function calcCarChoice() {
     const cars = document.getElementById("inputCarSelect");
     const numDaysInputField = document.getElementById("numDaysInput");
@@ -55,6 +59,11 @@ function calcCarChoice() {
     return carChoiceCost;
 }
 
+/*
+* This funciton calculates the Return Date
+*
+* @return returnDate (Date) - The return date
+*/
 function calculateOptionsCosts() {
     let tollCheck = document.getElementById("tollTagCheck").checked;
     let gpsCheck = document.getElementById("gpsCheck").checked;
@@ -118,7 +127,7 @@ function calculateReturnDate() {
 *
 */
 function validateForm(inputCheck) {
-    if ( (isNaN(inputCheck.value)) || (inputCheck.value < 0) ) {
+    if ( (isNaN(inputCheck.value)) || (inputCheck.value <= 0) ) {
         document.getElementById("bottomP").innerHTML = "The input was not correct. Please input valid positive numbers";
         document.getElementById("bottomP").style.display = "block";
     }
@@ -126,7 +135,6 @@ function validateForm(inputCheck) {
 
 /*
 * This funciton removes input error message   
-*
 */
 function doReset() {
     // document.getElementById("bottomP").innerHTML = "";
