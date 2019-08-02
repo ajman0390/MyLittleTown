@@ -1,0 +1,9 @@
+.noneImgBorder {
+    border: 0;
+    border-radius: 25px;
+}
+
+/* Add a hover effect (blue/grey shadow) */
+.noneImgBorder:hover {
+    box-shadow: 0 0 2px 1px rgba(46, 54, 56, 0.5);
+  }
