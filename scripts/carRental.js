@@ -13,9 +13,6 @@ window.onload = function () {
 function calculatePrice() {
     validateForm(document.getElementById("numDaysInput")); // calls validateForm to check for positive values
 
-    // let carChoice = calcCarChoice();
-    // let carPriceFinal = calculateDaysCosts(carChoice);
-
     let carPriceFinal = calcCarChoice();
     let optionCostsFinal = calculateOptionsCosts();
     let ageCosts = calculateAgeCost();
@@ -34,15 +31,8 @@ function calculatePrice() {
 
     let returnDateField = document.getElementById("returnDateOutput");
     returnDateField.value = returnDate.toDateString();
-    // document.getElementsByClassName("hideDiss").style.display = "block";
-    document.getElementById("showRtrnDate").style.display = "block";
 }
-// Did not need function
-// function calculateDaysCosts(carChoice) {
-//     const numDayField = document.getElementById("numDaysInput");
-//     let carPrice = carChoice * numDayField.value;
-//     return carPrice;
-// }
+
 
 function calcCarChoice() {
     const cars = document.getElementById("inputCarSelect");

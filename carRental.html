@@ -37,7 +37,7 @@
                     <a class="nav-link" href="hotelStay.html">Hotel</a>
                 </li>
 
-                <li class="nav-item">
+                <li class="nav-item active">
                     <a class="nav-link" href="carRental.html">Car Rental</a>
                 </li>
 
@@ -95,12 +95,8 @@
                 <div class="form-group row">
                     <label for="pickupDateInput" class="col-sm-2 col-form-label">Pickup Date: </label>
                     <div class="col-md-6">
-                        <input type="date" class="form-control" placeholder="Pickup Date" tabindex="1"
+                        <input type="date" class="form-control" tabindex="1"
                             id="pickupDateInput" name="pickupDateInput" />
-                    </div>
-
-                    <div class="col-md-4">
-                        <p id="bottomP"></p>
                     </div>
 
                 </div>
@@ -184,7 +180,7 @@
                 <!-- Total Car Rental Costs output -->
                 <div class="form-group row hideDis" id="showRental">
                     <label for="carRentalPmtTotal" class="control-label col-sm-2 col-form-label">Car Rental:</label>
-                    <div id="loan-life-group" class="col-md-6">
+                    <div class="col-md-6">
                         <div class="input-group-prepend">
                             <div class="input-group-text">$</div>
                             <input type="number" class="form-control" placeholder="Car Rental Costs" tabindex="1"
@@ -200,7 +196,7 @@
                 <!-- Total Options Costs output -->
                 <div class="form-group row hideDis" id="showOptions">
                     <label for="carOptionPmtTotal" class="control-label col-sm-2 col-form-label">Options:</label>
-                    <div id="loan-life-group" class="col-md-6">
+                    <div class="col-md-6">
                         <div class="input-group-prepend">
                             <div class="input-group-text">$</div>
                             <input type="number" class="form-control" placeholder="Options Costs" tabindex="1"
@@ -216,7 +212,7 @@
                 <!-- Total Under 25 Costs output -->
                 <div class="form-group row hideDis" id="showAge">
                     <label for="underOutput" class="control-label col-sm-2 col-form-label">Under 25 surcharge:</label>
-                    <div id="loan-life-group" class="col-md-6">
+                    <div class="col-md-6">
                         <div class="input-group-prepend">
                             <div class="input-group-text">$</div>
                             <input type="number" class="form-control" placeholder="Age Surcharge" tabindex="1"
@@ -232,7 +228,7 @@
                 <!-- Total Due Output -->
                 <div class="form-group row hideDis" id="showTotal">
                     <label for="pmtTotalDue" class="control-label col-sm-2 col-form-label">Total Due:</label>
-                    <div id="loan-life-group" class="col-md-6">
+                    <div class="col-md-6">
                         <div class="input-group-prepend">
                             <div class="input-group-text">$</div>
                             <input type="number" class="form-control" placeholder="Total Car Rental Costs" tabindex="1"
@@ -248,20 +244,11 @@
                 <!-- Return Date output -->
                 <div class="form-group row hideDis" id="showRtrnDate">
                     <label for="returnDateOutput" class="control-label col-sm-2 col-form-label">Return Date:</label>
-                    <div id="loan-life-group" class="col-md-6">
+                    <div class="col-md-6">
                         <input type="text" class="form-control" placeholder="Return Date" tabindex="1"
                             id="returnDateOutput" name="returnDateOutput" readonly />
                     </div>
                 </div>
-
-                <!-- <div class="form-group row hideDis" id="showRtrnDate">
-                        <label for="returnDateOutput" class="control-label col-sm-2 col-form-label">Checkout Date:</label>
-                        <div class="col-md-6">
-                            <input type="text" class="form-control" placeholder="Checkout Date" tabindex="1"
-                                id="returnDateOutput" name="returnDateOutput" readonly />
-                        </div>
-                    </div> -->
-                    
 
             </form> <!-- End of Form -->
         </section> <!-- /section -->
@@ -269,7 +256,7 @@
 
     <footer class="container">
         <hr />
-        <p>&copy; FatCatBank 2019</p>
+        <p>&copy; OurLittleTown 2019</p>
     </footer>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
