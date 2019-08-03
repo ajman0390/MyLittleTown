@@ -12,14 +12,21 @@ h1 {
     white-space: nowrap;
 }
 
-#bottomP {
+#errorP {
     font-style: italic;
-    color: red;
-    background-color: wheat;
+    color: whitesmoke;
+    background-image: linear-gradient(360deg,#383836 10%,#4a4a4a 360%);
     padding-top: .4em;
     margin-top: .8em;
     display: none;
+    border-radius: 25px;
+    text-align: center;
+}
 
+#msgError {
+    font-weight: bold;
+    text-decoration: underline rgb(253, 32, 253);
+    color: crimson;
 }
 
 footer p {
