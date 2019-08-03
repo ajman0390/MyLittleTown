@@ -16,18 +16,17 @@ function calculatePrice() {
     // Room select 
     const rooms = document.getElementById("inputRoomSelect");
     const roomType = rooms.options[rooms.selectedIndex].value;
-    const roomFinal = getRoomInfo(roomType);
+    const roomObj = getRoomInfo(roomType);
 
     // Num of Guests, check if can stay in selected room 
     const numAdults = document.getElementById("numAdultsInput").value;
-    validateForm(document.getElementById("numAdultsInput")); // calls validateForm to check for positive values
     const numKids = document.getElementById("numChildrenInput").value;
-    canRoomHoldCustomer(roomFinal, numAdults, numKids);
+    canRoomHoldCustomer(roomObj, numAdults, numKids);
 
     // Num of nights, checkIn date, call getRoomCost to calc roomCostBeforeDiscouting
     const numNightsInputField = document.getElementById("numNightsInput");
     const checkinDayField = document.getElementById("checkInDateInput");
-    let roomCostBeforeDiscouting = getRoomCost(roomFinal, checkinDayField.value, numNightsInputField.value);
+    let roomCostBeforeDiscouting = getRoomCost(roomObj, checkinDayField.value, numNightsInputField.value);
 
     // call getBreakfastCost to calc bfast costs
     let bfastCost = getBreakfastCost(numAdults, numKids, numNightsInputField.value);
@@ -47,14 +46,12 @@ function calculatePrice() {
     let roomFinalCosts = bfastCost + roomCostBeforeDiscouting;
     document.getElementById("roomPmtTotal").value = roomFinalCosts.toFixed(2);
 
-    // console.log(roomFinalCosts);
-
     // Calc and display Taxes
     let taxCost = getTax(roomFinalCosts);
     document.getElementById("taxPmtTotal").value = taxCost.toFixed(2);
 
     // Calc and display Total Final Costs
-    let totalStayCosts = roomFinalCosts + taxCost - roomDiscount;
+    let totalStayCosts = taxCost + roomFinalCosts - roomDiscount;
     document.getElementById("pmtTotalDue").value = totalStayCosts.toFixed(2);
 
     // Call calculateReturnDate to calc return date, display return date
@@ -96,9 +93,13 @@ function getRoomInfo(roomType) {
 function canRoomHoldCustomer(roomType, numAdults, numKids) {
     let numGuests = Number(numAdults) + Number(numKids);
 
+    // check values
     if (numGuests > roomType.maxOccupancy) {
-        document.getElementById("bottomP").innerHTML = "The number of Guests exceeds the occupancy of the Room(s)";
-        document.getElementById("bottomP").style.display = "block";
+        document.getElementById("errorP").innerHTML = "The <span id=\"msgError\">Number of Guests</span> exceeds the occupancy of the Room(s)";
+        document.getElementById("errorP").style.display = "block";
+    } if ( Number(numAdults) <= 0) {
+        document.getElementById("errorP").innerHTML = "The Number of Adults was not correct. Please input valid positive numbers, <span id=\"msgError\">minimum 1 per room</span>";
+        document.getElementById("errorPP").style.display = "block";
     }
 }
 
@@ -107,8 +108,8 @@ function canRoomHoldCustomer(roomType, numAdults, numKids) {
 *
 * @return roomCost (Number) - The Room costs
 */
-function getRoomCost(roomFinal, checkInDate, numNights) {
-    let roomCost = numNights * roomFinal.lowSeasonRate;
+function getRoomCost(roomObj, checkInDate, numNights) {
+    let roomCost = numNights * roomObj.lowSeasonRate;
     return roomCost;
 }
 
@@ -135,22 +136,22 @@ function getBreakfastCost(numAdults, numKids, numNights) {
 /*
 * This funciton calculates the  discount rate
 *
-* @return discountCosts (Number) - The discount rate based on radio inputs
+* @return discountRate (Number) - The discount rate based on radio inputs
 */
 function getDiscount(roomPrice) {
     let aaaRadio = document.getElementById("aaaRadio").checked;
     let seniorRadio = document.getElementById("seniorRadio").checked;
     let militaryRadio = document.getElementById("militaryRadio").checked;
-    let discountCosts = 0;
+    let discountRate = 0;
 
     if (aaaRadio) {
-        discountCosts = .1;
+        discountRate = .1;
     } else if (seniorRadio) {
-        discountCosts = .1;
+        discountRate = .1;
     } else if (militaryRadio) {
-        discountCosts = .2;
+        discountRate = .2;
     }
-    return discountCosts;
+    return discountRate;
 }
 
 /*
@@ -159,8 +160,8 @@ function getDiscount(roomPrice) {
 * @return returnDate (Date) - The return date
 */
 function getTax(roomFinalCosts) {
-    let taxAmt = .12;
-    return roomFinalCosts * taxAmt;
+    let taxRate = .12;
+    return roomFinalCosts * taxRate;
 }
 
 /*
@@ -190,8 +191,8 @@ function calculateReturnDate() {
 */
 function validateForm(inputCheck) {
     if ( (isNaN(inputCheck.value)) || (inputCheck.value <= 0) ) {
-        document.getElementById("bottomP").innerHTML = "The input was not correct. Please input valid positive numbers";
-        document.getElementById("bottomP").style.display = "block";
+        document.getElementById("errorP").innerHTML = "The <span id=\"msgError\">Number of Nights</span> was not correct. Please input valid positive numbers";
+        document.getElementById("errorP").style.display = "block";
     }
 }
 
@@ -199,6 +200,6 @@ function validateForm(inputCheck) {
 * This funciton removes input error message   
 */
 function doReset() {
-    // document.getElementById("bottomP").innerHTML = "";
-    document.getElementById("bottomP").style.display = "none";
+    // document.getElementById("errorP").innerHTML = "";
+    document.getElementById("errorP").style.display = "none";
 }
