@@ -136,22 +136,22 @@ function getBreakfastCost(numAdults, numKids, numNights) {
 /*
 * This funciton calculates the  discount rate
 *
-* @return discountCosts (Number) - The discount rate based on radio inputs
+* @return discountRate (Number) - The discount rate based on radio inputs
 */
 function getDiscount(roomPrice) {
     let aaaRadio = document.getElementById("aaaRadio").checked;
     let seniorRadio = document.getElementById("seniorRadio").checked;
     let militaryRadio = document.getElementById("militaryRadio").checked;
-    let discountCosts = 0;
+    let discountRate = 0;
 
     if (aaaRadio) {
-        discountCosts = .1;
+        discountRate = .1;
     } else if (seniorRadio) {
-        discountCosts = .1;
+        discountRate = .1;
     } else if (militaryRadio) {
-        discountCosts = .2;
+        discountRate = .2;
     }
-    return discountCosts;
+    return discountRate;
 }
 
 /*
