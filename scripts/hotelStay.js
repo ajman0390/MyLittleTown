@@ -99,7 +99,7 @@ function canRoomHoldCustomer(roomType, numAdults, numKids) {
         document.getElementById("errorP").style.display = "block";
     } if ( Number(numAdults) <= 0) {
         document.getElementById("errorP").innerHTML = "The Number of Adults was not correct. Please input valid positive numbers, <span id=\"msgError\">minimum 1 per room</span>";
-        document.getElementById("errorPP").style.display = "block";
+        document.getElementById("errorP").style.display = "block";
     }
 }
 
