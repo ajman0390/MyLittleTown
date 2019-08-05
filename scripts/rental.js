@@ -4,6 +4,7 @@
 window.onload = function () {
     document.getElementById("calcBtn").onclick = calculatePrice;
     document.getElementById("resetBtn").onclick = doReset;
+    document.getElementById("pickupDateInput").valueAsDate = new Date();
 }
 
 /*
