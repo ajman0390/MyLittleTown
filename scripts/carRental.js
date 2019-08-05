@@ -128,8 +128,8 @@ function calculateReturnDate() {
 */
 function validateForm(inputCheck) {
     if ( (isNaN(inputCheck.value)) || (inputCheck.value <= 0) ) {
-        document.getElementById("bottomP").innerHTML = "The input was not correct. Please input valid positive numbers";
-        document.getElementById("bottomP").style.display = "block";
+        document.getElementById("errorP").innerHTML = "The input was not correct. Please input valid positive numbers";
+        document.getElementById("errorP").style.display = "block";
     }
 }
 
@@ -137,6 +137,6 @@ function validateForm(inputCheck) {
 * This funciton removes input error message   
 */
 function doReset() {
-    // document.getElementById("bottomP").innerHTML = "";
-    document.getElementById("bottomP").style.display = "none";
+    // document.getElementById("errorP").innerHTML = "";
+    document.getElementById("errorP").style.display = "none";
 }
