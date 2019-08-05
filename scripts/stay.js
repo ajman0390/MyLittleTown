@@ -11,6 +11,7 @@ window.onload = function () {
 * calculate the costs 
 */
 function calculatePrice() {
+    
     validateForm(document.getElementById("numNightsInput")); // calls validateForm to check for positive values
 
     // Room select 
@@ -57,6 +58,11 @@ function calculatePrice() {
     // Call calculateReturnDate to calc return date, display return date
     let returnDate = calculateReturnDate();
     document.getElementById("returnDateOutput").value = returnDate.toDateString();
+
+    // If any changes to input form, remove error message
+    document.getElementById("hotel-Stay").onchange = function() {
+        doReset();
+    }
 }
 
 /*
@@ -110,6 +116,12 @@ function canRoomHoldCustomer(roomType, numAdults, numKids) {
 */
 function getRoomCost(roomObj, checkInDate, numNights) {
     let roomCost = numNights * roomObj.lowSeasonRate;
+
+    // Check checkInDate to ensure vaild input
+    if ( checkInDate == "" ) {
+        document.getElementById("errorP").innerHTML = "The <span id=\"msgError\">CheckIn Date</span> was not correct. Please input valid date";
+        document.getElementById("errorP").style.display = "block";
+    }
     return roomCost;
 }
 

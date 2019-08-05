@@ -31,6 +31,11 @@ function calculatePrice() {
 
     let returnDateField = document.getElementById("returnDateOutput");
     returnDateField.value = returnDate.toDateString();
+
+    // If any changes to input form, remove error message
+    document.getElementById("car-Rental").onchange = function() {
+        doReset();
+    }
 }
 
 /*
@@ -116,6 +121,12 @@ function calculateReturnDate() {
     let daysMSec = numDayField.value * msePerDay;
     let dayCosts = daysMSec + dateTimeValue + msePerDay;
 
+    // Check pickupDate to ensure vaild input
+    if ( pickupDayField.value == "" ) {
+        document.getElementById("errorP").innerHTML = "The <span id=\"msgError\">Pickup Date</span> was not correct. Please input valid date";
+        document.getElementById("errorP").style.display = "block";
+    }
+
     let returnDate = new Date(dayCosts);
     return returnDate;
 }
@@ -128,8 +139,8 @@ function calculateReturnDate() {
 */
 function validateForm(inputCheck) {
     if ( (isNaN(inputCheck.value)) || (inputCheck.value <= 0) ) {
-        document.getElementById("bottomP").innerHTML = "The input was not correct. Please input valid positive numbers";
-        document.getElementById("bottomP").style.display = "block";
+        document.getElementById("errorP").innerHTML = "The input was not correct. Please input valid positive numbers";
+        document.getElementById("errorP").style.display = "block";
     }
 }
 
@@ -137,6 +148,6 @@ function validateForm(inputCheck) {
 * This funciton removes input error message   
 */
 function doReset() {
-    // document.getElementById("bottomP").innerHTML = "";
-    document.getElementById("bottomP").style.display = "none";
+    // document.getElementById("errorP").innerHTML = "";
+    document.getElementById("errorP").style.display = "none";
 }
