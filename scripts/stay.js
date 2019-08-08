@@ -46,15 +46,15 @@ function calculatePrice() {
     // Calc final Room costs
     let roomDiscount = roomCostBeforeDiscouting * discountCost;
     let roomFinalCosts = bfastCost + roomCostBeforeDiscouting;
-    document.getElementById("roomPmtTotal").value = roomFinalCosts.toFixed(2);
+    document.getElementById("roomPmtTotal").value = roomFinalCosts.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
 
     // Calc and display Taxes
     let taxCost = getTax(roomFinalCosts);
-    document.getElementById("taxPmtTotal").value = taxCost.toFixed(2);
+    document.getElementById("taxPmtTotal").value = taxCost.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
 
     // Calc and display Total Final Costs
     let totalStayCosts = taxCost + roomFinalCosts - roomDiscount;
-    document.getElementById("pmtTotalDue").value = totalStayCosts.toFixed(2);
+    document.getElementById("pmtTotalDue").value = totalStayCosts.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
 
     // Call calculateReturnDate to calc return date, display return date
     let returnDate = calculateReturnDate();

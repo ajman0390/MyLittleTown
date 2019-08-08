@@ -24,29 +24,29 @@
 <body>
   <!-- Start of Nav -->
   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark navd">
-      <a class="navbar-brand" href="index.html">Home</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsDefault"
-          aria-controls="navbarsDefault" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-      </button>
+    <a class="navbar-brand" href="index.html">Home</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsDefault"
+      aria-controls="navbarsDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-      <div class="collapse navbar-collapse" id="navbarsDefault">
-          <ul class="navbar-nav ml-auto">
-              <li class="nav-item">
-                  <a class="nav-link" href="hotel.html">Hotel</a>
-              </li>
+    <div class="collapse navbar-collapse" id="navbarsDefault">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="hotel.html">Hotel</a>
+        </li>
 
-              <li class="nav-item">
-                  <a class="nav-link" href="car.html">Car Rental</a>
-              </li>
+        <li class="nav-item">
+          <a class="nav-link" href="car.html">Car Rental</a>
+        </li>
 
-              <li class="nav-item active">
-                  <a class="nav-link" href="activities.html">Activities</a>
-              </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="activities.html">Activities</a>
+        </li>
 
-          </ul>
-      </div>
-      <!-- End of Nav -->
+      </ul>
+    </div>
+    <!-- End of Nav -->
   </nav>
 
   <!-- Main jumbotron -->
@@ -67,33 +67,83 @@
 
   <main class="container text-center">
 
+    <form class="form-horizontal well" id="car-Rental" method="GET" action="#">
+
+      <!-- Message at top of Form -->
+      <h3>Adventures</h3>
+      <hr />
+
+      <!-- Car Type Dropdown -->
+      <div class="form-group row">
+        <div class="input-group">
+          <label class="col-sm-2 col-form-label" for="inputCarSelect">Adventure Type</label>
+          <div class="col-md-4">
+            <select class="custom-select" id="inputCarSelect" aria-label="Example select with button addon">
+              <option value="1" selected>Select One...</option>
+              <option value="2">Museum Tours</option>
+              <option value="3">Food Tours</option>
+              <option value="4">Adventure Tours</option>
+            </select>
+
+          </div>
+          <!-- Form Calculate and Reset Btns -->
+          <div class="text-center col">
+            <button type="button" class="btn btn-outline-primary btn-lg" name="calculate" id="addBtn">Add</button>
+            <button type="reset" class="btn btn-outline-danger btn-lg" id="resetBtn">Reset</button>
+          </div>
+        </div>
+
+
+
+      </div>
+
+      <div class="container col-md-8" id="bottomDiv">
+        <table class="table table-hover" id="tours">
+          <thead class="thead-dark">
+            <tr>
+              <th>Title</th>
+              <th>Description</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+        </table>
+
+      </div>
+
+      <div>
+
+      </div>
+
+    </form>
+
+
     <!-- Row of columns -->
-    <section class="row bottomRow">
-        <div class="col-md-4">
-          <h2>Hotel</h2>
-          <a target="_self" href="hotel.html">
-              <img src="imgs/sm-big-hotel.jpg" alt="Hotel" class="img-thumbnail noneImgBorder" title="Hotel">
-          </a>
-          <p class="pTop">Get started in reviewing our hotel stay calculator. </p>
-          <p><a class="btn btn-secondary" href="hotel.html" role="button">Lodging &raquo;</a></p>
-        </div>
-        <div class="col-md-4">
-          <h2>Car Rental</h2>
-          <a target="_self" href="car.html">
-              <img src="imgs/bg-car-outline.jpg" alt="Car Rental" class="img-thumbnail noneImgBorder" title="Car Rental">
-          </a>
-          <p class="pTop">Review our Car Rental calculator. </p>
-          <p><a class="btn btn-secondary" href="car.html" role="button">Car Rental &raquo;</a></p>
-        </div>
-        <div class="col-md-4">
-          <h2>Activities</h2>
-          <a target="_self" href="activities.html">
-              <img src="imgs/sm-hiking.jpg" alt="Hiking" class="img-thumbnail noneImgBorder" title="Hiking">
-            </a>
-          <p class="pTop">Learn more about our tours and activities.</p>
-          <p><a class="btn btn-secondary" href="activities.html" role="button">Activities &raquo;</a></p>
-        </div>
-      </section>
+    <!-- <section class="row bottomRow">
+      <div class="col-md-4">
+        <h2>Hotel</h2>
+        <a target="_self" href="hotel.html">
+          <img src="imgs/sm-big-hotel.jpg" alt="Hotel" class="img-thumbnail noneImgBorder" title="Hotel">
+        </a>
+        <p class="pTop">Get started in reviewing our hotel stay calculator. </p>
+        <p><a class="btn btn-secondary" href="hotel.html" role="button">Lodging &raquo;</a></p>
+      </div>
+      <div class="col-md-4">
+        <h2>Car Rental</h2>
+        <a target="_self" href="car.html">
+          <img src="imgs/bg-car-outline.jpg" alt="Car Rental" class="img-thumbnail noneImgBorder" title="Car Rental">
+        </a>
+        <p class="pTop">Review our Car Rental calculator. </p>
+        <p><a class="btn btn-secondary" href="car.html" role="button">Car Rental &raquo;</a></p>
+      </div>
+      <div class="col-md-4">
+        <h2>Activities</h2>
+        <a target="_self" href="activities.html">
+          <img src="imgs/sm-hiking.jpg" alt="Hiking" class="img-thumbnail noneImgBorder" title="Hiking">
+        </a>
+        <p class="pTop">Learn more about our tours and activities.</p>
+        <p><a class="btn btn-secondary" href="activities.html" role="button">Activities &raquo;</a></p>
+      </div>
+    </section> -->
 
   </main> <!-- /container -->
 
@@ -108,6 +158,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
+  <script src="scripts/tours.js"></script>
 </body>
 
 </html>

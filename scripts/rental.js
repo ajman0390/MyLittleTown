@@ -28,7 +28,7 @@ function calculatePrice() {
     let totalCosts = carPriceFinal + surcharge + optionCostsFinal;
 
     let totalDueField = document.getElementById("pmtTotalDue");
-    totalDueField.value = totalCosts.toFixed(2);
+    totalDueField.value = totalCosts.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
 
     let returnDateField = document.getElementById("returnDateOutput");
     returnDateField.value = returnDate.toDateString();
